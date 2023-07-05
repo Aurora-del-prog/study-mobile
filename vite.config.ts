@@ -10,7 +10,8 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000/',
+        // 3000是服务器，8888是mock
+        target: 'http://localhost:8888/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '') // 不可以省略rewrite
       }
